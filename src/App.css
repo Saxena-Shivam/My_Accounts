@@ -1,1 +1,32 @@
 @import "tailwindcss";
+/* App.css */
+body,
+html {
+  cursor: none;
+}
+
+.custom-dot-cursor {
+  pointer-events: none;
+  position: fixed;
+  z-index: 9999;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #a21caf; /* purple-700 */
+  transform: translate(-50%, -50%);
+  transition: background 0.2s, transform 0.08s;
+  mix-blend-mode: difference;
+}
+.custom-dot-cursor {
+  pointer-events: none;
+  position: fixed;
+  z-index: 9999;
+  width: 40px; /* Large radius */
+  height: 40px;
+  border: 2.5px solid #a21caf; /* purple-700 */
+  border-radius: 50%;
+  background: rgba(162, 28, 175, 0.07); /* subtle purple fill */
+  transform: translate(-50%, -50%);
+  transition: border 0.2s, background 0.2s, transform 0.08s;
+  mix-blend-mode: difference;
+}

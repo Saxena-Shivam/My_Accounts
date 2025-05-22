@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Github, Linkedin, Twitter, Instagram, Code, Copy } from "lucide-react";
 import "./App.css";
 
@@ -61,51 +61,52 @@ export default function SocialLinksPage() {
     setCopiedIndex(index);
     setTimeout(() => setCopiedIndex(null), 2000);
   };
-
+  const [cursor, setCursor] = useState({ x: 0, y: 0 });
+  useEffect(() => {
+    const move = (e) => setCursor({ x: e.clientX, y: e.clientY });
+    window.addEventListener("mousemove", move);
+    return () => window.removeEventListener("mousemove", move);
+  }, []);
   return (
-    <div className="min-h-screen bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 flex items-center justify-center p-8 relative overflow-hidden">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {socialLinks.map((link, index) => (
-          <div
-            key={index}
-            className="p-6 bg-gradient-to-br from-white to-gray-100 transition-all duration-300 rounded-2xl shadow-xl flex flex-col items-center"
-          >
-            <div className="text-3xl mb-2 text-purple-600">{link.icon}</div>
-            <p className="font-semibold text-lg mb-3 text-gray-800">
-              {link.name}
-            </p>
-            <div className="flex flex-col w-full gap-2">
-              <button
-                className="flex-1 flex items-center justify-center gap-2 bg-gray-800 text-white hover:bg-purple-600 hover:text-white cursor-pointer py-2 px-4 rounded transition"
-                onClick={() => copyToClipboard(link.url, index)}
-              >
-                <Copy className="w-4 h-4" /> Copy URL
-              </button>
-              <a
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 flex items-center justify-center gap-2 bg-gray-800 text-white hover:bg-purple-600 hover:text-white cursor-pointer py-2 px-4 rounded transition text-center"
-              >
-                Visit
-              </a>
+    <>
+      <div
+        className="custom-dot-cursor"
+        style={{ left: cursor.x, top: cursor.y }}
+      />
+      <div className="min-h-screen bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 flex items-center justify-center p-8 relative overflow-hidden">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {socialLinks.map((link, index) => (
+            <div
+              key={index}
+              className="p-6 bg-gradient-to-br from-white to-gray-100 transition-all duration-300 rounded-2xl shadow-xl flex flex-col items-center"
+            >
+              <div className="text-3xl mb-2 text-purple-600">{link.icon}</div>
+              <p className="font-semibold text-lg mb-3 text-gray-800">
+                {link.name}
+              </p>
+              <div className="flex flex-col w-full gap-2">
+                <button
+                  className="flex-1 flex items-center justify-center gap-2 bg-gray-800 text-white hover:bg-purple-600 hover:text-white cursor-pointer py-2 px-4 rounded transition"
+                  onClick={() => copyToClipboard(link.url, index)}
+                >
+                  <Copy className="w-4 h-4" /> Copy URL
+                </button>
+                <a
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 flex items-center justify-center gap-2 bg-gray-800 text-white hover:bg-purple-600 hover:text-white cursor-pointer py-2 px-4 rounded transition text-center"
+                >
+                  Visit
+                </a>
+              </div>
+              {copiedIndex === index && (
+                <p className="text-sm text-green-500 mt-2">Copied!</p>
+              )}
             </div>
-            {copiedIndex === index && (
-              <p className="text-sm text-green-500 mt-2">Copied!</p>
-            )}
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
-/* No additional code needed at the placeholder. 
-To move the "Visit" button above the "Copy URL" button, 
-swap their order inside the JSX where the buttons are rendered: 
-place the <a> element before the <button> element in the flex container. */
-/* 
-To stack the "Visit" and "Copy URL" buttons vertically, 
-replace the "flex w-full gap-2" class with "flex flex-col w-full gap-2" 
-in the div wrapping the buttons. 
-Also, ensure the <a> comes before the <button> for the correct order.
-*/
