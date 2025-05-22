@@ -85,7 +85,7 @@ export default function SocialLinksPage() {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 flex items-center justify-center gap-2 bg-purple-600 text-white hover:bg-gray-800 hover:text-white cursor-pointer py-2 px-4 rounded transition text-center"
+                className="flex-1 flex items-center justify-center gap-2 bg-gray-800 text-white hover:bg-purple-600 hover:text-white cursor-pointer py-2 px-4 rounded transition text-center"
               >
                 Visit
               </a>
