@@ -1,81 +1,121 @@
 import React, { useState, useEffect } from "react";
-import { Github, Linkedin, Twitter, Instagram, Code, Copy } from "lucide-react";
+import {
+  Github,
+  Linkedin,
+  Twitter,
+  Instagram,
+  Code,
+  Copy,
+  Briefcase,
+  BookHeart,
+  ChefHat,
+  Zap,
+  Shield,
+  Trophy,
+  BookOpen,
+  Layers,
+  Lightbulb,
+  Rocket,
+  Cpu,
+  Target,
+  Compass,
+  GraduationCap,
+  Flame,
+  Mail,
+  FileText,
+} from "lucide-react";
 import "./App.css";
 
 const socialLinks = [
+  {
+    name: "Portfolio",
+    url: "https://portfolio-new-seven-henna.vercel.app/",
+    icon: <BookHeart />,
+  },
   { name: "GitHub", url: "https://github.com/Saxena-Shivam", icon: <Github /> },
   {
     name: "LinkedIn",
     url: "https://www.linkedin.com/in/shivam-saxena-aa8754289/",
     icon: <Linkedin />,
   },
-  { name: "Twitter", url: "https://x.com/Shivam562006", icon: <Twitter /> },
   {
     name: "Instagram",
     url: "https://www.instagram.com/its_the_shivam_/",
     icon: <Instagram />,
   },
+  { name: "Twitter", url: "https://x.com/Shivam562006", icon: <Twitter /> },
+  {
+    name: "Gmail",
+    url: "mailto:shivamsaxena562006@gmail.com",
+    icon: <Mail />,
+  },
+  {
+    name: "Resume",
+    url: "https://shivam-accounts.vercel.app//Shivam_RESUME.pdf",
+    icon: <FileText />,
+  },
   {
     name: "Codeforces",
     url: "https://codeforces.com/profile/shivamsaxena562006",
-    icon: <Code />,
+    icon: <Zap />,
   },
   {
     name: "CodeChef",
-    url: "https://www.codechef.com/users/shivamsaxena56",
-    icon: <Code />,
+    url: "https://www.codechef.com/users/s_raja",
+    icon: <ChefHat />,
   },
   {
     name: "LeetCode",
     url: "https://leetcode.com/u/shivamsaxena56/",
-    icon: <Code />,
+    icon: <Trophy />,
   },
   {
     name: "GeeksforGeeks",
     url: "https://www.geeksforgeeks.org/user/shivamsaxenni1/",
-    icon: <Code />,
+    icon: <BookOpen />,
   },
-  {
-    name: "HackerRank",
-    url: "https://www.hackerrank.com/profile/shivamsaxena56",
-    icon: <Code />,
-  },
-  {
-    name: "HackerEarth",
-    url: "https://www.hackerearth.com/@shivam5572/",
-    icon: <Code />,
-  },
-  {
-    name: "AtCoder",
-    url: "https://atcoder.jp/users/shivamsaxena56",
-    icon: <Code />,
-  },
-  { name: "SPOJ", url: "https://www.spoj.com/", icon: <Code /> },
-
   {
     name: "Codolio",
     url: "https://codolio.com/profile/shivam56",
-    icon: <Code />,
+    icon: <Lightbulb />,
   },
   {
     name: "TUF",
     url: "https://takeuforward.org/profile/shivamsaxena56",
-    icon: <Code />,
-  },
-  {
-    name: "CSES",
-    url: "https://cses.fi/user/338893",
-    icon: <Code />,
+    icon: <Rocket />,
   },
   {
     name: "TLE",
     url: "https://www.tle-eliminators.com/my-profile",
-    icon: <Code />,
+    icon: <Flame />,
   },
+
+  {
+    name: "HackerRank",
+    url: "https://www.hackerrank.com/profile/shivamsaxena56",
+    icon: <Shield />,
+  },
+  {
+    name: "HackerEarth",
+    url: "https://www.hackerearth.com/@shivam5572/",
+    icon: <Layers />,
+  },
+  {
+    name: "AtCoder",
+    url: "https://atcoder.jp/users/shivamsaxena56",
+    icon: <Cpu />,
+  },
+  { name: "SPOJ", url: "https://www.spoj.com/", icon: <Target /> },
+  {
+    name: "CSES",
+    url: "https://cses.fi/user/338893",
+    icon: <Compass />,
+  },
+
   {
     name: "NXTWAVE",
     url: "https://learning.ccbp.in/profile/47756418-44a9-4c4f-8459-7e90976d6e93",
-    icon: <Code />,
+    icon: <GraduationCap />,
   },
 ];
 
@@ -100,7 +140,7 @@ export default function SocialLinksPage() {
         style={{ left: cursor.x, top: cursor.y }}
       />
       <div className="min-h-screen bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 flex items-center justify-center p-8 relative overflow-hidden">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
           {socialLinks.map((link, index) => (
             <div
               key={index}
