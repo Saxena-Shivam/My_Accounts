@@ -51,6 +51,32 @@ const socialLinks = [
     icon: <Code />,
   },
   { name: "SPOJ", url: "https://www.spoj.com/", icon: <Code /> },
+
+  {
+    name: "Codolio",
+    url: "https://codolio.com/profile/shivam56",
+    icon: <Code />,
+  },
+  {
+    name: "TUF",
+    url: "https://takeuforward.org/profile/shivamsaxena56",
+    icon: <Code />,
+  },
+  {
+    name: "CSES",
+    url: "https://cses.fi/user/338893",
+    icon: <Code />,
+  },
+  {
+    name: "TLE",
+    url: "https://www.tle-eliminators.com/my-profile",
+    icon: <Code />,
+  },
+  {
+    name: "NXTWAVE",
+    url: "https://learning.ccbp.in/profile/47756418-44a9-4c4f-8459-7e90976d6e93",
+    icon: <Code />,
+  },
 ];
 
 export default function SocialLinksPage() {
