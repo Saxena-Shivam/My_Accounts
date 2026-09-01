@@ -56,7 +56,7 @@ const socialLinks = [
   },
   {
     name: "Instagram",
-    url: "https://www.instagram.com/its_the_shivam_/",
+    url: "https://www.instagram.com/shivam862006/",
     icon: <Instagram />,
   },
   {
@@ -71,7 +71,7 @@ const socialLinks = [
   },
   {
     name: "Resume",
-    url: "https://shivam-accounts.vercel.app//Shivam_RESUME.pdf",
+    url: "https://shivam-accounts.vercel.app/Shivam_Saxena_Resume.pdf",
     icon: <FileText />,
   },
 
