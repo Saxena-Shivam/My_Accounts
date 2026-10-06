@@ -88,7 +88,7 @@ const socialLinks = [
   },
   {
     name: "LeetCode",
-    url: "https://leetcode.com/u/shivamsaxena56/",
+    url: "https://leetcode.com/u/saxena_106/",
     icon: <Trophy />,
   },
   {
